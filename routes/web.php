@@ -27,3 +27,11 @@ Route::group(['prefix'=>"automovel", 'middleware'=>"admin_auth"], function(){
     Route::post('/store', "AutomovelController@store");
     Route::put('/update/{id}', "AutomovelController@update");
 });
+
+Route::group(['prefix'=>"reserva", 'middleware'=>"admin_auth"], function(){
+    Route::get('/', "ReservaController@index");
+});
+
+Route::group(['prefix'=>"cliente", 'middleware'=>"admin_auth"], function(){
+    Route::get('/', "ClienteController@index");
+});
