@@ -25,13 +25,13 @@
                 <div class="col-12 col-sm-4 col-lg-4">
                 <div class="card card-sm-2">
                   <div class="card-icon">
-                    <i class="ion ion-ios-paper-outline text-primary"></i>
+                  <img src="{{asset($automoveis->foto)}}" style="width:53px; height:53px;" alt="" srcset="">
                   </div>
                   <div class="card-header">
-                    <h4>News</h4>
+                  <h4>{{$automoveis->marca}} {{$automoveis->modelo}}</h4>
                   </div>
                   <div class="card-body">
-                    40 <span class="text-muted">/ ∞</span>
+                    {{number_format($automoveis->preco, 2,',','.')}} <span class="text-muted">Akz</span>
                   </div>
                   <div class="card-progressbar">
                     <div class="progress" style="height: 6px;">
@@ -39,8 +39,15 @@
                     </div>
                   </div>
                   <div class="card-footer">
-                    Sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Modalidade de Pagamento: {{$automoveis->tipo}}
+                    @if ($automoveis->estado=="on")
+                        <a href="/reservar/edit/{{$automoveis->id}}" class="badge badge-success">Reservar</a>
+                    @else
+                    <a href="#" class="badge badge-danger">Indisponivel</a>
+                    @endif
+
                   </div>
+
                 </div>
               </div>
             @endforeach
