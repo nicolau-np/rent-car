@@ -100,6 +100,9 @@
                 {{Form::close()}}
               </div>
             </div>
+            <div class="mt-5 text-muted text-center">
+                Já possui uma <a href="/login">Conta?</a>
+              </div>
             <div class="simple-footer">
               Copyright &copy; System Rent-car {{date('Y')}}
             </div>

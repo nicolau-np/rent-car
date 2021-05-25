@@ -25,8 +25,11 @@
                     <th>IMG Automovel</th>
                     <th>Marca</th>
                     <th>Modelo</th>
-                    <th>Preco</th>
                     <th>Cliente</th>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Quant.</th>
+                    <th>Preco Total</th>
                     <th>Estado</th>
                   </tr>
                   @foreach ($getReservas as $reservas)
@@ -34,8 +37,11 @@
                   <td><img src="{{asset($reservas->automovel->foto)}}" style="width:53px; height:53px;" alt="" srcset=""/></td>
                   <td>{{$reservas->automovel->marca}}</td>
                     <td>{{$reservas->automovel->modelo}}</td>
-                    <td>{{$reservas->automovel->preco}}</td>
                   <td>{{$reservas->cliente->pessoa->nome}} {{$reservas->cliente->pessoa->sobrenome}}</td>
+                  <td>{{$reservas->data_requisicao}}</td>
+                  <td>{{$reservas->hora_requisicao}}</td>
+                  <td>{{$reservas->tempo}}</td>
+                  <td>{{number_format($reservas->preco_total,2,',','.')}}</td>
                   </tr>
 
                   @endforeach
