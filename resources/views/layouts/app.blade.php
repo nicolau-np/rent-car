@@ -17,6 +17,8 @@
 </head>
 
 <body>
+    @if ($type!="login" || $type!="register")
+
   <div id="app">
     <div class="main-wrapper">
       <div class="navbar-bg"></div>
@@ -473,6 +475,9 @@
     </div>
   </div>
 
+@else
+  @yield('content')
+@endif
   <script src="{{asset('assets/modules/jquery.min.js')}}"></script>
   <script src="{{asset('assets/modules/popper.js')}}"></script>
   <script src="{{asset('assets/modules/tooltip.js')}}"></script>
