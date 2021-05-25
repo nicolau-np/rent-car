@@ -6,5 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Automovel extends Model
 {
-    //
+    protected $table = "automovels";
+    protected $fillable = [
+        'marca',
+        'modelo',
+        'cilindragem',
+        'matricula',
+        'foto',
+        'estado',
+    ];
+
+    public function reserva(){
+        return $this->hasMany(Reserva::class, 'id_automovel', 'id');
+    }
 }
