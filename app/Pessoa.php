@@ -18,4 +18,8 @@ class Pessoa extends Model
     {
         return $this->hasMany(Cliente::class, 'id_pessoa', 'id');
     }
+
+    public function usuario(){
+        return $this->hasMany(User::class, 'id_pessoa', 'id');
+    }
 }

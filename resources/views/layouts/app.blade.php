@@ -84,7 +84,7 @@
             <i class="ion ion-android-person d-lg-none"></i>
             <div class="d-sm-none d-lg-inline-block">
                 @if (Auth::check())
-                    {{Auth::user()->nome}}
+                    {{Auth::user()->pessoa->nome}}
                 @else
                     usuario
                 @endif
@@ -110,7 +110,7 @@
             <div class="sidebar-user-details">
               <div class="user-name">
                   @if (Auth::check())
-                        {{Auth::user()->nome}}
+                        {{Auth::user()->pessoa->nome}}
                   @else
                   usuario
                   @endif
