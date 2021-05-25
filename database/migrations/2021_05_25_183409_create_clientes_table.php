@@ -17,6 +17,7 @@ class CreateClientesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('id_pessoa')->unsigned()->index();
             $table->string('bairro');
+            $table->bigInteger('telefone');
             $table->timestamps();
         });
 

@@ -14,7 +14,13 @@ class CreateAutomovelsTable extends Migration
     public function up()
     {
         Schema::create('automovels', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->string('marca');
+            $table->string('modelo');
+            $table->string('cilindragem');
+            $table->string('matricula');
+            $table->text('foto');
+            $table->string('estado');
             $table->timestamps();
         });
     }
