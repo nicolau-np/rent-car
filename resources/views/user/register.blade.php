@@ -38,14 +38,41 @@
                       @endif
                     </div>
                   </div>
-
-                  <div class="form-group">
+    <div class="row">
+                  <div class="form-group col-4">
                     <label for="email">Email</label>
                     <input id="email" type="email" class="form-control" name="email">
                     @if($errors->has('email'))
                       <span class="text-danger">{{$errors->first('email')}}</span>
                     @endif
                   </div>
+
+                  <div class="form-group col-4">
+                    <label for="telefone">Telefone</label>
+                    <input id="telefone" type="number" class="form-control" name="telefone">
+                    @if($errors->has('telefone'))
+                      <span class="text-danger">{{$errors->first('telefone')}}</span>
+                    @endif
+                  </div>
+
+                  <div class="form-group col-4">
+                    <label for="bairro">Bairro</label>
+                    <input id="bairro" type="text" class="form-control" name="bairro">
+                    @if($errors->has('bairro'))
+                      <span class="text-danger">{{$errors->first('bairro')}}</span>
+                    @endif
+                  </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group col-4">
+                    <label for="foto">Foto</label>
+                    <input id="foto" type="text" class="form-control" name="foto">
+                    @if($errors->has('foto'))
+                      <span class="text-danger">{{$errors->first('foto')}}</span>
+                    @endif
+                  </div>
+              </div>
 
                   <div class="row">
                     <div class="form-group col-6">
@@ -64,14 +91,6 @@
                     </div>
                   </div>
 
-
-
-                  <div class="form-group">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" name="agree" class="custom-control-input" id="agree">
-                      <label class="custom-control-label" for="agree">Aceitar termos de contrato</label>
-                    </div>
-                  </div>
 
                   <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block">

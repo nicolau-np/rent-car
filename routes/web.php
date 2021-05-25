@@ -19,6 +19,7 @@ Route::get('/login', "UsuarioController@login")->name('login');
 Route::get('/logout', "UsuarioController@logout")->name('logout');
 Route::post('/logar', "UsuarioController@logar")->name('logar');
 Route::get('/register', "UsuarioController@register")->name('register');
+Route::post('/regiter_store', "UsuarioController@regiter_store")->name('regiter_store');
 
 Route::group(['prefix' => "automovel", 'middleware' => "admin_auth"], function () {
     Route::get('/', "AutomovelController@index");

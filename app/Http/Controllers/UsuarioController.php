@@ -54,4 +54,38 @@ class UsuarioController extends Controller
         return view('user.register', $data);
     }
 
+    public function regiter_store(Request $request){
+        $request->validate([
+            'nome' => ['required','string', 'min:4', 'max:255'],
+            'sobrenome' => ['required','string', 'min:4', 'max:255'],
+            'email' => ['required','email', 'min:4', 'max:255'],
+            'bairro' => ['required','string', 'min:4', 'max:255'],
+            'telefone' => ['required','Integer'],
+            'palavra_passe' =>['required', 'string', 'min:6', 'max:255'],
+            'password_confirm'=>['required', 'string', 'min:6', 'max:255'],
+            'foto' => ['required', 'mimes:jpg,jpeg,png,JPG,JPEG,PNG', 'max:10000'],
+        ]);
+
+        $data['pessoa']=[
+                'nome'=>$request->nome,
+                'sobrenome'=>$request->sobrenome,
+                'foto'=>null,
+                'estado'=>"on",
+        ];
+        $data['user'] = [
+            'id_pessoa'=>null,
+            'email'=>$request->email,
+            'acesso'=>"user",
+            'password'=>$request->palavra_passe,
+            'estado'=>"on",
+        ];
+
+        $data['cliente']= [
+            'id_pessoa'=>null,
+            'bairro'=>$request->bairro,
+            'telefone'=>$request->telefone,
+        ];
+
+    }
+
 }
