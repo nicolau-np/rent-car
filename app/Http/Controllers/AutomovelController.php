@@ -57,6 +57,8 @@ class AutomovelController extends Controller
             'cilindragem' => ['required', 'string', 'min:2', 'max:255'],
             'matricula' => ['required', 'string', 'min:5', 'max:255'],
             'estado' => ['required', 'string', 'min:2', 'max:3'],
+            'modalidade' => ['required', 'string', 'min:2', 'max:255'],
+            'preco' => ['required', 'numeric', 'min:1'],
             'foto' => ['required', 'mimes:jpg,jpeg,png,JPG,JPEG,PNG', 'max:10000'],
         ]);
 
@@ -66,6 +68,8 @@ class AutomovelController extends Controller
             'cilindragem'=>$request->cilindragem,
             'matricula'=>$request->matricula,
             'foto'=>null,
+            'preco' =>$request->preco,
+            'tipo'=>$request->modalidade,
             'estado'=>$request->estado,
         ];
 
@@ -141,6 +145,8 @@ class AutomovelController extends Controller
             'cilindragem'=>$request->cilindragem,
             'matricula'=>$request->matricula,
             'foto'=>$automovel->foto,
+            'preco' =>$request->preco,
+            'tipo'=>$request->modalidade,
             'estado'=>$request->estado,
         ];
 

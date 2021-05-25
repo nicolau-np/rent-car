@@ -27,6 +27,8 @@
                     <th>Marca</th>
                     <th>Modelo</th>
                     <th>Matricula</th>
+                    <th>Preco</th>
+                    <th>Modalidade</th>
                     <th>Estado</th>
                     <th>Operação</th>
                   </tr>
@@ -36,6 +38,8 @@
                   <td>{{$automoveis->marca}}</td>
                     <td>{{$automoveis->modelo}}</td>
                     <td>{{$automoveis->matricula}}</td>
+                  <td>{{$automoveis->preco}}</td>
+                  <td>{{$automoveis->modalidade}}</td>
                     <td>{{$automoveis->estado}}</td>
                     <td>
                         <a href="/automovel/edit/{{$automoveis->id}}" class="btn btn-action btn-secondary">Editar</a>

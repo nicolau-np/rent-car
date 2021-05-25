@@ -70,7 +70,7 @@
               </div>
 
               <div class="row">
-                <div class="form-group col-6">
+                <div class="form-group col-4">
                   <label for="password" class="d-block">Estado</label>
                   {{Form::select('estado', [
                       'on'=>"on",
@@ -81,6 +81,27 @@
                     <span class="text-danger">{{$errors->first('estado')}}</span>
                 @endif
                 </div>
+
+                <div class="form-group col-4">
+                    <label for="preco" class="d-block">Preço</label>
+                <input id="preco" value="{{$getAutomovel->preco}}" type="number" class="form-control" name="preco">
+                  @if($errors->has('preco'))
+                      <span class="text-danger">{{$errors->first('preco')}}</span>
+                  @endif
+                  </div>
+
+                  <div class="form-group col-4">
+                    <label for="modalidade" class="d-block">Modalidade de Pagamento</label>
+                    {{Form::select('modalidade', [
+                        'hora'=>"hora",
+                        'distancia'=>"distancia",
+                    'minuto'=>"minuto"
+                    ], $getAutomovel->modalidade, ['class'=>"form-control"])}}
+
+                  @if($errors->has('modalidade'))
+                      <span class="text-danger">{{$errors->first('modalidade')}}</span>
+                  @endif
+                  </div>
 
               </div>
 
