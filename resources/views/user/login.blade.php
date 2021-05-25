@@ -39,9 +39,9 @@
                         </a>
                       </div>
                     </label>
-                    <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
-                        @if($errors->has('password'))
-                        <div class="invalid-feedback">{{$errors->first('password')}}
+                    <input id="password" type="password" class="form-control" name="palavra_passe" tabindex="2" required>
+                        @if($errors->has('palavra_passe'))
+                        <div class="invalid-feedback">{{$errors->first('palavra_passe')}}
                         </div>
                         @endif
                   </div>
