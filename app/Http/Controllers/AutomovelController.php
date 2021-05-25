@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Automovel;
 use Illuminate\Http\Request;
 
 class AutomovelController extends Controller
@@ -13,11 +14,13 @@ class AutomovelController extends Controller
      */
     public function index()
     {
+        $automoveis = Automovel::paginate(5);
         $data = [
             'title' => "Automoveis",
             'menu' => "Automoveis",
             'submenu' =>"Listar",
             'type' =>"automovel",
+            'getAutomoveis'=>$automoveis,
         ];
 
         return view('automoveis.list', $data);
