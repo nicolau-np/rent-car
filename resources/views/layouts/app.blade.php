@@ -138,7 +138,7 @@
               <a href="chartjs.html"><i class="ion ion-stats-bars"></i><span>Reservas</span></a>
             </li>
             <li>
-                <a href="simple.html"><i class="ion ion-users"></i><span>Clientes</span></a>
+                <a href="simple.html"><i class="ion-person-stalker"></i><span>Clientes</span></a>
             </li>
             @endif
 
