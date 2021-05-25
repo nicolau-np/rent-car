@@ -21,5 +21,9 @@ Route::post('/logar', "UsuarioController@logar")->name('logar');
 Route::get('/register', "UsuarioController@register")->name('register');
 
 Route::group(['prefix'=>"automovel", 'middleware'=>"admin_auth"], function(){
-    
+    Route::get('/', "AutomovelController@index");
+    Route::get('/create', "AutomovelController@create");
+    Route::get('/edit/{id}', "AutomovelController@edit");
+    Route::post('/store', "AutomovelController@store");
+    Route::put('/update/{id}', "AutomovelController@update");
 });
