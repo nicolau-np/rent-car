@@ -43,5 +43,15 @@ class UsuarioController extends Controller
         return redirect()->route('login');
     }
 
+    public function register(){
+        $data = [
+            'title' => "Registro",
+            'menu' => "registro",
+            'submenu' =>null,
+            'type' =>"register",
+        ];
+
+        return view('user.register', $data);
+    }
 
 }
