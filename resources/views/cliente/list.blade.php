@@ -22,7 +22,6 @@
             <div class="table-responsive">
                 <table class="table table-striped">
                   <tbody><tr>
-                    <th>#</th>
                     <th>IMG</th>
                     <th>Telefone</th>
                     <th>Bairro</th>

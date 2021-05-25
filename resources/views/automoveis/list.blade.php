@@ -22,7 +22,6 @@
             <div class="table-responsive">
                 <table class="table table-striped">
                   <tbody><tr>
-                    <th>#</th>
                     <th>IMG</th>
                     <th>Marca</th>
                     <th>Modelo</th>
@@ -38,8 +37,8 @@
                   <td>{{$automoveis->marca}}</td>
                     <td>{{$automoveis->modelo}}</td>
                     <td>{{$automoveis->matricula}}</td>
-                  <td>{{$automoveis->preco}}</td>
-                  <td>{{$automoveis->modalidade}}</td>
+                  <td>{{number_format($automoveis->preco,2,',','.')}}</td>
+                  <td>{{$automoveis->tipo}}</td>
                     <td>{{$automoveis->estado}}</td>
                     <td>
                         <a href="/automovel/edit/{{$automoveis->id}}" class="btn btn-action btn-secondary">Editar</a>

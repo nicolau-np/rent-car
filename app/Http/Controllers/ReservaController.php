@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Reserva;
 use Illuminate\Http\Request;
 
 class ReservaController extends Controller
@@ -13,7 +14,16 @@ class ReservaController extends Controller
      */
     public function index()
     {
-        //
+        $reservas = Reserva::paginate(5);
+        $data = [
+            'title' => "Reservas",
+            'menu' => "Reservas",
+            'submenu' => "Listar",
+            'type' => "reservas",
+            'getReservas' => $reservas,
+        ];
+
+        return view('reserva.list', $data);
     }
 
     /**
