@@ -20,6 +20,8 @@ class CreateAutomovelsTable extends Migration
             $table->string('cilindragem');
             $table->string('matricula');
             $table->text('foto');
+            $table->bigInteger('preco');
+            $table->string('tipo');
             $table->string('estado');
             $table->timestamps();
         });

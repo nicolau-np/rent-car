@@ -13,6 +13,8 @@ class Automovel extends Model
         'cilindragem',
         'matricula',
         'foto',
+        'preco',
+        'tipo',
         'estado',
     ];
 
