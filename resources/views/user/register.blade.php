@@ -21,7 +21,7 @@
                 @if (session('success'))
                     <div class="alert bg-success" role="alert"><em class="fa fa-lg fa-check">&nbsp;</em> {{session('success')}} <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
                 @endif
-                {{Form::open(['method'=>"post", 'name'=>"formLogin", 'url'=>"/regiter_store"])}}
+                {{Form::open(['method'=>"post", 'name'=>"formLogin", 'url'=>"/regiter_store", 'enctype'=>"multipart/form-data"])}}
                   <div class="row">
                     <div class="form-group col-6">
                       <label for="frist_name">Nome </label>
@@ -65,9 +65,9 @@
               </div>
 
               <div class="row">
-                <div class="form-group col-4">
+                <div class="form-group col-12">
                     <label for="foto">Foto</label>
-                    <input id="foto" type="text" class="form-control" name="foto">
+                    <input id="foto" type="file" class="form-control" name="foto">
                     @if($errors->has('foto'))
                       <span class="text-danger">{{$errors->first('foto')}}</span>
                     @endif
