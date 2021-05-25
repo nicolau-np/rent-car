@@ -36,3 +36,7 @@ Route::group(['prefix' => "reserva", 'middleware' => "admin_auth"], function () 
 Route::group(['prefix' => "cliente", 'middleware' => "admin_auth"], function () {
     Route::get('/', "ClienteController@index");
 });
+
+Route::group(['prefix' => "reservar", 'middleware' => "user_auth"], function () {
+    Route::get('/', "ReservaController@create");
+});

@@ -150,6 +150,11 @@
             </li>
             @endif
 
+            @if (Auth::user()->acesso == "user")
+            <li>
+                <a href="/reservar"><i class="ion-closed-captioning"></i><span>Reservar</span></a>
+            </li>
+            @endif
             @endif
 
 
