@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-group col-6">
                   <label for="hora">Hora</label>
-                  <input id="hora" type="text" class="form-control" name="hora">
+                  <input id="hora" type="time" class="form-control" name="hora">
                   @if($errors->has('hora'))
                   <span class="text-danger">{{$errors->first('hora')}}</span>
                  @endif

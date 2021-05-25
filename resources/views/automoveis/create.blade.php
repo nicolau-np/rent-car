@@ -94,8 +94,7 @@
                     <label for="modalidade" class="d-block">Modalidade de Pagamento</label>
                     {{Form::select('modalidade', [
                         'hora'=>"hora",
-                        'distancia'=>"distancia",
-                    'minuto'=>"minuto"
+                        'minuto'=>"minuto"
                     ], null, ['class'=>"form-control"])}}
 
                   @if($errors->has('modalidade'))

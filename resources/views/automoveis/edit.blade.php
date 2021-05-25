@@ -26,18 +26,18 @@
                 @if (session('success'))
                     <div class="alert bg-success" role="alert"><em class="fa fa-lg fa-check">&nbsp;</em> {{session('success')}} <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
                 @endif
-                {{Form::open(['method'=>"put", 'name'=>"formRserva", 'url'=>"/reservar/update/{$getAutomovel->id}", 'enctype'=>"multipart/form-data"])}}
+                {{Form::open(['method'=>"put", 'name'=>"formRserva", 'url'=>"/automovel/update/{$getAutomovel->id}", 'enctype'=>"multipart/form-data"])}}
               <div class="row">
                 <div class="form-group col-6">
                   <label for="marca">Marca</label>
-                  <input id="marca" type="text" class="form-control" name="marca" autofocus="">
+                <input id="marca" value="{{$getAutomovel->marca}}" type="text" class="form-control" name="marca" autofocus="">
                   @if($errors->has('marca'))
                   <span class="text-danger">{{$errors->first('marca')}}</span>
                  @endif
                 </div>
                 <div class="form-group col-6">
                   <label for="modelo">Modelo</label>
-                  <input id="modelo" type="text" class="form-control" name="modelo">
+                  <input id="modelo" value="{{$getAutomovel->modelo}}" type="text" class="form-control" name="modelo">
                   @if($errors->has('modelo'))
                   <span class="text-danger">{{$errors->first('modelo')}}</span>
                  @endif
@@ -47,14 +47,14 @@
               <div class="row">
                 <div class="form-group col-6">
                   <label for="cilindragem">Cilindragem</label>
-                  <input id="cilindragem" type="text" class="form-control" name="cilindragem" autofocus="">
+                  <input id="cilindragem" value="{{$getAutomovel->cilindragem}}" type="text" class="form-control" name="cilindragem" autofocus="">
                   @if($errors->has('cilindragem'))
                   <span class="text-danger">{{$errors->first('cilindragem')}}</span>
                  @endif
                 </div>
                 <div class="form-group col-6">
                   <label for="matricula">Matricula</label>
-                  <input id="matricula" type="text" class="form-control" name="matricula">
+                  <input id="matricula" value="{{$getAutomovel->matricula}}" type="text" class="form-control" name="matricula">
                   @if($errors->has('matricula'))
                   <span class="text-danger">{{$errors->first('matricula')}}</span>
                  @endif
@@ -75,7 +75,7 @@
                   {{Form::select('estado', [
                       'on'=>"on",
                   'off'=>"off"
-                  ], null, ['class'=>"form-control"])}}
+                  ], $getAutomovel->estado, ['class'=>"form-control"])}}
 
                 @if($errors->has('estado'))
                     <span class="text-danger">{{$errors->first('estado')}}</span>
@@ -84,19 +84,18 @@
 
                 <div class="form-group col-4">
                     <label for="preco" class="d-block">Preço</label>
-                    <input id="preco" type="number" class="form-control" name="preco">
+                    <input id="preco" value="{{$getAutomovel->preco}}" type="number" class="form-control" name="preco">
                   @if($errors->has('preco'))
                       <span class="text-danger">{{$errors->first('preco')}}</span>
                   @endif
                   </div>
 
                   <div class="form-group col-4">
-                    <label for="modalidade" class="d-block">Modalidade de Pagamento</label>
+                    <label for="modalidade"  class="d-block">Modalidade de Pagamento</label>
                     {{Form::select('modalidade', [
                         'hora'=>"hora",
-                        'distancia'=>"distancia",
-                    'minuto'=>"minuto"
-                    ], null, ['class'=>"form-control"])}}
+                        'minuto'=>"minuto"
+                    ], $getAutomovel->tipo, ['class'=>"form-control"])}}
 
                   @if($errors->has('modalidade'))
                       <span class="text-danger">{{$errors->first('modalidade')}}</span>
