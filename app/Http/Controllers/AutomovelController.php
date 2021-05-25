@@ -70,7 +70,7 @@ class AutomovelController extends Controller
         ];
 
         if ($request->hasFile('foto') && $request->foto->isValid()) {
-            $path = $request->file('foto')->store('img_portefolios');
+            $path = $request->file('foto')->store('img_automoveis');
             $data['foto'] = $path;
         }
 
@@ -99,6 +99,9 @@ class AutomovelController extends Controller
     public function edit($id)
     {
         $automovel = Automovel::find($id);
+        if(!$automovel){
+            return back()->with(['error'=>"Nao encontrou"]);
+        }
         $data = [
             'title' => "Automoveis",
             'menu' => "Automoveis",
@@ -119,7 +122,44 @@ class AutomovelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $automovel = Automovel::find($id);
+        if(!$automovel){
+            return back()->with(['error'=>"Nao encontrou"]);
+        }
+
+        $request->validate([
+            'marca' => ['required', 'string', 'min:2', 'max:255'],
+            'modelo' => ['required', 'string', 'min:2', 'max:255'],
+            'cilindragem' => ['required', 'string', 'min:2', 'max:255'],
+            'matricula' => ['required', 'string', 'min:5', 'max:255'],
+            'estado' => ['required', 'string', 'min:2', 'max:3'],
+        ]);
+
+        $data = [
+            'marca'=>$request->marca,
+            'modelo'=>$request->modelo,
+            'cilindragem'=>$request->cilindragem,
+            'matricula'=>$request->matricula,
+            'foto'=>$automovel->foto,
+            'estado'=>$request->estado,
+        ];
+
+        if ($request->hasFile('foto') && $request->foto->isValid()) {
+            $request->validate([
+                'foto' => ['required', 'mimes:jpg,jpeg,png,JPG,JPEG,PNG', 'max:10000'],
+            ]);
+            if ($automovel->foto != "" && file_exists($automovel->foto)) {
+                unlink($automovel->foto);
+            }
+
+            $path = $request->file('foto')->store('img_automoveis');
+            $data['foto'] = $path;
+        }
+
+
+        if(Automovel::find($id)->update($data)){
+            return back()->with(['success'=>"Feito com sucesso"]);
+        }
     }
 
     /**

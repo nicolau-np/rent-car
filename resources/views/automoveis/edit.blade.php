@@ -26,7 +26,7 @@
                 @if (session('success'))
                     <div class="alert bg-success" role="alert"><em class="fa fa-lg fa-check">&nbsp;</em> {{session('success')}} <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a></div>
                 @endif
-                {{Form::open(['method'=>"post", 'name'=>"formAutomovel", 'url'=>"/automovel/update/{$getAutomovel->id}", 'enctype'=>"multipart/form-data"])}}
+                {{Form::open(['method'=>"put", 'name'=>"formAutomovel", 'url'=>"/automovel/update/{$getAutomovel->id}", 'enctype'=>"multipart/form-data"])}}
               <div class="row">
                 <div class="form-group col-6">
                   <label for="marca">Marca</label>
