@@ -20,6 +20,8 @@ class CreateReservasTable extends Migration
             $table->date('data_requisicao');
             $table->string('hora_requisicao');
             $table->string('local_receber');
+            $table->bigInteger('tempo');
+            $table->decimal('preco_total', 12,2);
             $table->string('estado');
             $table->timestamps();
         });

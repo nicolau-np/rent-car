@@ -40,4 +40,5 @@ Route::group(['prefix' => "cliente", 'middleware' => "admin_auth"], function () 
 Route::group(['prefix' => "reservar", 'middleware' => "user_auth"], function () {
     Route::get('/', "ReservaController@create");
     Route::get('/edit/{id}', "ReservaController@edit");
+    Route::put('/update/{id}', "ReservaController@update");
 });

@@ -13,6 +13,8 @@ class Reserva extends Model
         'id_automovel',
         'data_requisicao',
         'hora_requisicao',
+        'tempo',
+        'preco_total',
         'local_receber',
         'estado',
     ];

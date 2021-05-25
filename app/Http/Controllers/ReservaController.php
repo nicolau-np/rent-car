@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Automovel;
+use App\Cliente;
 use App\Reserva;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReservaController extends Controller
 {
@@ -100,7 +102,30 @@ class ReservaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cliente = Cliente::where(['id_pessoa'=>Auth::user()->pessoa->id])->first();
+        $automovel= Automovel::find($id);
+        if(!$automovel){
+            return back()->with(['error'=>"Nao encontrou"]);
+        }
+
+        $request->validate([
+            'tempo'=>['required','Integer', 'min:1'],
+            'hora' =>['required','string'],
+            'data' =>['required', 'date'],
+            'local_receber'=>['required', 'string'],
+        ]);
+
+        $preco_total = $request->tempo * $automovel->preco;
+        $data = [
+            'id_cliente'=>$cliente->id,
+            'id_automovel'=>$id,
+            'data_requisicao'=>$request->data,
+            'hora_requisicao'=>$request->hora,
+            'tempo'=>$request->tempo,
+            'preco_total'=>$preco_total,
+            'local_receber'=>$request->local,
+            'estado'=>"on",
+        ];
     }
 
     /**
