@@ -76,7 +76,19 @@ class ReservaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $automovel= Automovel::find($id);
+        if(!$automovel){
+            return back()->with(['error'=>"Nao encontrou"]);
+        }
+        $data = [
+            'title' => "Reservar",
+            'menu' => "Reservar",
+            'submenu' => "Novo",
+            'type' => "reservas",
+            'getAutomovel' =>$automovel,
+        ];
+
+        return view('reserva.edit', $data);
     }
 
     /**
