@@ -127,7 +127,8 @@
             <li class="active">
               <a href="/"><i class="ion ion-speedometer"></i><span>Home</span></a>
             </li>
-
+            @if (Auth::check())
+            @if (Auth::user()->acesso=="admin")
             <li class="menu-header">Essenciais</li>
 
             <li>
@@ -139,6 +140,10 @@
             <li>
               <a href="simple.html"><i class="ion ion-ios-location-outline"></i><span>Categoria</span></a>
             </li>
+
+            @endif
+
+            @endif
 
 
             <li class="menu-header">Mais</li>
