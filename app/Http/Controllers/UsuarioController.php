@@ -13,7 +13,7 @@ class UsuarioController extends Controller
             'title' => "Iniciar Sessão",
             'menu' => "login",
             'submenu' =>null,
-            'type' =>"menu",
+            'type' =>"login",
         ];
 
         return view('user.login', $data);
