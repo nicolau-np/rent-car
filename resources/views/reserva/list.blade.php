@@ -30,7 +30,6 @@
                     <th>Hora</th>
                     <th>Quant.</th>
                     <th>Preco Total</th>
-                    <th>Estado</th>
                   </tr>
                   @foreach ($getReservas as $reservas)
                   <tr>
