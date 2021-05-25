@@ -82,11 +82,15 @@
           </li>
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg">
             <i class="ion ion-android-person d-lg-none"></i>
-            <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div></a>
+            <div class="d-sm-none d-lg-inline-block">
+                @if (Auth::check())
+                    {{Auth::user()->nome}}
+                @else
+                    usuario
+                @endif
+            </div></a>
             <div class="dropdown-menu dropdown-menu-right">
-              <a href="profile.html" class="dropdown-item has-icon">
-                <i class="ion ion-android-person"></i> Profile
-              </a>
+
               <a href="#" class="dropdown-item has-icon">
                 <i class="ion ion-log-out"></i> Logout
               </a>
@@ -97,90 +101,52 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html">Stisla Lite</a>
+          <a href="/">{{$title}}</a>
           </div>
           <div class="sidebar-user">
             <div class="sidebar-user-picture">
               <img alt="image" src="{{asset('assets/img/avatar/avatar-1.jpeg')}}">
             </div>
             <div class="sidebar-user-details">
-              <div class="user-name">Ujang Maman</div>
+              <div class="user-name">
+                  @if (Auth::check())
+                        {{Auth::user()->nome}}
+                  @else
+                  usuario
+                  @endif
+              </div>
               <div class="user-role">
-                Administrator
+                @if (Auth::check())
+                        {{Auth::user()->acesso}}
+                @endif
               </div>
             </div>
           </div>
           <ul class="sidebar-menu">
-            <li class="menu-header">Dashboard</li>
+            <li class="menu-header">Home</li>
             <li class="active">
-              <a href="index.html"><i class="ion ion-speedometer"></i><span>Dashboard</span></a>
+              <a href="/"><i class="ion ion-speedometer"></i><span>Home</span></a>
             </li>
 
-            <li class="menu-header">Components</li>
+            <li class="menu-header">Essenciais</li>
+
             <li>
-              <a href="#" class="has-dropdown"><i class="ion ion-ios-albums-outline"></i><span>Components</span></a>
-              <ul class="menu-dropdown">
-                <li><a href="general.html"><i class="ion ion-ios-circle-outline"></i> Basic</a></li>
-                <li><a href="components.html"><i class="ion ion-ios-circle-outline"></i> Main Components</a></li>
-                <li><a href="buttons.html"><i class="ion ion-ios-circle-outline"></i> Buttons</a></li>
-                <li><a href="toastr.html"><i class="ion ion-ios-circle-outline"></i> Toastr</a></li>
-              </ul>
+              <a href="table.html"><i class="ion ion-clipboard"></i><span>Carros</span></a>
             </li>
             <li>
-              <a href="#" class="has-dropdown"><i class="ion ion-flag"></i><span>Icons</span></a>
-              <ul class="menu-dropdown">
-                <li><a href="ion-icons.html"><i class="ion ion-ios-circle-outline"></i> Ion Icons</a></li>
-                <li><a href="fontawesome.html"><i class="ion ion-ios-circle-outline"></i> Font Awesome</a></li>
-                <li><a href="flag.html"><i class="ion ion-ios-circle-outline"></i> Flag</a></li>
-              </ul>
+              <a href="chartjs.html"><i class="ion ion-stats-bars"></i><span>Reservas</span></a>
             </li>
             <li>
-              <a href="table.html"><i class="ion ion-clipboard"></i><span>Tables</span></a>
-            </li>
-            <li>
-              <a href="chartjs.html"><i class="ion ion-stats-bars"></i><span>Chart.js</span></a>
-            </li>
-            <li>
-              <a href="simple.html"><i class="ion ion-ios-location-outline"></i><span>Google Maps</span></a>
-            </li>
-            <li>
-              <a href="#" class="has-dropdown"><i class="ion ion-ios-copy-outline"></i><span>Examples</span></a>
-              <ul class="menu-dropdown">
-                <li><a href="login.html"><i class="ion ion-ios-circle-outline"></i> Login</a></li>
-                <li><a href="register.html"><i class="ion ion-ios-circle-outline"></i> Register</a></li>
-                <li><a href="forgot.html"><i class="ion ion-ios-circle-outline"></i> Forgot Password</a></li>
-                <li><a href="reset.html"><i class="ion ion-ios-circle-outline"></i> Reset Password</a></li>
-                <li><a href="404.html"><i class="ion ion-ios-circle-outline"></i> 404</a></li>
-              </ul>
+              <a href="simple.html"><i class="ion ion-ios-location-outline"></i><span>Categoria</span></a>
             </li>
 
-            <li class="menu-header">More</li>
+
+            <li class="menu-header">Mais</li>
+
             <li>
-              <a href="#" class="has-dropdown"><i class="ion ion-ios-nutrition"></i> Click Me</a>
-              <ul class="menu-dropdown">
-                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Menu 1</a></li>
-                <li><a href="#" class="has-dropdown"><i class="ion ion-ios-circle-outline"></i> Menu 2</a>
-                  <ul class="menu-dropdown">
-                    <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 1</a></li>
-                    <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 2</a></li>
-                    <li><a href="#" class="has-dropdown"><i class="ion ion-ios-circle-outline"></i> Child Menu 3</a>
-                      <ul class="menu-dropdown">
-                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 1</a></li>
-                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 2</a></li>
-                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 3</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 4</a></li>
-                  </ul>
-                </li>
-              </ul>
+              <a href="#"><i class="ion ion-heart"></i> Sobre <div class="badge badge-primary">10</div></a>
             </li>
-            <li>
-              <a href="#"><i class="ion ion-heart"></i> Badges <div class="badge badge-primary">10</div></a>
-            </li>
-            <li>
-              <a href="credits.html"><i class="ion ion-ios-information-outline"></i> Credits</a>
-            </li>          </ul>
+            </ul>
           <div class="p-3 mt-4 mb-4">
             <a href="http://stisla.multinity.com/" class="btn btn-danger btn-shadow btn-round has-icon has-icon-nofloat btn-block">
               <i class="ion ion-help-buoy"></i> <div>Go PRO!</div>
@@ -193,7 +159,7 @@
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://multinity.com/">Multinity</a>
+          Copyright &copy; {{date('Y')}} <div class="bullet"></div>
         </div>
         <div class="footer-right"></div>
       </footer>
