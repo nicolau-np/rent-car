@@ -140,7 +140,9 @@
             <li>
               <a href="simple.html"><i class="ion ion-ios-location-outline"></i><span>Categoria</span></a>
             </li>
-
+            <li>
+                <a href="simple.html"><i class="ion ion-users"></i><span>Clientes</span></a>
+            </li>
             @endif
 
             @endif
