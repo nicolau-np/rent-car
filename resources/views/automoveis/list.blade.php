@@ -16,7 +16,7 @@
             <div class="float-right">
               <a href="#" class="btn btn-primary">View All</a>
             </div>
-        <h4>{{$submenu}}</h4>
+        <h4>{{$submenu}}&nbsp;&nbsp;<a href="/automovel/create">Novo</a></h4>
           </div>
           <div class="card-body">
             <div class="table-responsive">
