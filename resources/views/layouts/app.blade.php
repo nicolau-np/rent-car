@@ -132,13 +132,10 @@
             <li class="menu-header">Essenciais</li>
 
             <li>
-              <a href="table.html"><i class="ion ion-clipboard"></i><span>Carros</span></a>
+              <a href="table.html"><i class="ion ion-clipboard"></i><span>Automóveis</span></a>
             </li>
             <li>
               <a href="chartjs.html"><i class="ion ion-stats-bars"></i><span>Reservas</span></a>
-            </li>
-            <li>
-              <a href="simple.html"><i class="ion ion-ios-location-outline"></i><span>Categoria</span></a>
             </li>
             <li>
                 <a href="simple.html"><i class="ion ion-users"></i><span>Clientes</span></a>
