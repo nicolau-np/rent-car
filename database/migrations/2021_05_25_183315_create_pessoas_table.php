@@ -17,7 +17,7 @@ class CreatePessoasTable extends Migration
             $table->bigIncrements('id');
             $table->string('nome');
             $table->string('sobrenome');
-            $table->text('foto');
+            $table->text('foto')->nullable();
             $table->string('estado');
             $table->timestamps();
         });
