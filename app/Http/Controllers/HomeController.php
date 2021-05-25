@@ -8,12 +8,12 @@ class HomeController extends Controller
 {
     public function index(){
         $data = [
-            'title'=>"Renta Car",
+            'title'=>"System Rent-Car",
             'menu'=>"Home",
             "submenu"=> null,
             'type'=>"home",
         ];
 
-        return view('home');
+        return view('home', $data);
     }
 }
