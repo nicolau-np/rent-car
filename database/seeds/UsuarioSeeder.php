@@ -20,13 +20,13 @@ class UsuarioSeeder extends Seeder
                     'id_pessoa'=>1,
                     'email'=>"tarcisotc@gmail.com",
                     'acesso'=>"user",
-                    'palavra_passe'=>md5("tarcisotc"),
+                    'password'=>md5("tarcisotc"),
                     'estado'=>"on",
                 ],[
                     'id_pessoa'=>2,
                     'email'=>"arafate@gmail.com",
                     'acesso'=>"admin",
-                    'palavra_passe'=>md5("arafate"),
+                    'password'=>md5("arafate"),
                     'estado'=>"on",
                 ],
             )
