@@ -20,6 +20,8 @@
           </div>
          <div class="card-body">
              <div class="row">
+
+                @foreach ($getAutomoveis as $automoveis)
                 <div class="col-12 col-sm-4 col-lg-4">
                 <div class="card card-sm-2">
                   <div class="card-icon">
@@ -41,6 +43,7 @@
                   </div>
                 </div>
               </div>
+            @endforeach
             </div>
          </div>
         </div>

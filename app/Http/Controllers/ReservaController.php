@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Automovel;
 use App\Reserva;
 use Illuminate\Http\Request;
 
@@ -33,12 +34,13 @@ class ReservaController extends Controller
      */
     public function create()
     {
-
+        $automoveis = Automovel::all();
         $data = [
             'title' => "Reservar",
             'menu' => "Reservar",
             'submenu' => "Novo",
             'type' => "reservas",
+            'getAutomoveis'=>$automoveis,
         ];
 
         return view('reserva.create', $data);
