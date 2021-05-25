@@ -20,7 +20,7 @@ Route::get('/logout', "UsuarioController@logout")->name('logout');
 Route::post('/logar', "UsuarioController@logar")->name('logar');
 Route::get('/register', "UsuarioController@register")->name('register');
 
-Route::group(['prefix'=>"automovel", 'middleware'=>"admin_auth"], function(){
+Route::group(['prefix' => "automovel", 'middleware' => "admin_auth"], function () {
     Route::get('/', "AutomovelController@index");
     Route::get('/create', "AutomovelController@create");
     Route::get('/edit/{id}', "AutomovelController@edit");
@@ -28,10 +28,10 @@ Route::group(['prefix'=>"automovel", 'middleware'=>"admin_auth"], function(){
     Route::put('/update/{id}', "AutomovelController@update");
 });
 
-Route::group(['prefix'=>"reserva", 'middleware'=>"admin_auth"], function(){
+Route::group(['prefix' => "reserva", 'middleware' => "admin_auth"], function () {
     Route::get('/', "ReservaController@index");
 });
 
-Route::group(['prefix'=>"cliente", 'middleware'=>"admin_auth"], function(){
+Route::group(['prefix' => "cliente", 'middleware' => "admin_auth"], function () {
     Route::get('/', "ClienteController@index");
 });
