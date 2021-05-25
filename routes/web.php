@@ -19,3 +19,7 @@ Route::get('/login', "UsuarioController@login")->name('login');
 Route::get('/logout', "UsuarioController@logout")->name('logout');
 Route::post('/logar', "UsuarioController@logar")->name('logar');
 Route::get('/register', "UsuarioController@register")->name('register');
+
+Route::group(['prefix'=>"automovel", 'middleware'=>"admin_auth"], function(){
+    
+});
