@@ -18,9 +18,9 @@ class AutomovelController extends Controller
         $data = [
             'title' => "Automoveis",
             'menu' => "Automoveis",
-            'submenu' =>"Listar",
-            'type' =>"automovel",
-            'getAutomoveis'=>$automoveis,
+            'submenu' => "Listar",
+            'type' => "automovel",
+            'getAutomoveis' => $automoveis,
         ];
 
         return view('automoveis.list', $data);
@@ -36,8 +36,8 @@ class AutomovelController extends Controller
         $data = [
             'title' => "Automoveis",
             'menu' => "Automoveis",
-            'submenu' =>"Novo",
-            'type' =>"automovel",
+            'submenu' => "Novo",
+            'type' => "automovel",
         ];
 
         return view('automoveis.create', $data);
@@ -51,7 +51,32 @@ class AutomovelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'marca' => ['required', 'string', 'min:2', 'max:255'],
+            'modelo' => ['required', 'string', 'min:2', 'max:255'],
+            'cilindragem' => ['required', 'string', 'min:2', 'max:255'],
+            'matricula' => ['required', 'string', 'min:5', 'max:255'],
+            'estado' => ['required', 'string', 'min:2', 'max:3'],
+            'foto' => ['required', 'mimes:jpg,jpeg,png,JPG,JPEG,PNG', 'max:10000'],
+        ]);
+
+        $data = [
+            'marca'=>$request->marca,
+            'modelo'=>$request->modelo,
+            'cilindragem'=>$request->cilindragem,
+            'matricula'=>$request->matricula,
+            'foto'=>null,
+            'estado'=>$request->estado,
+        ];
+
+        if ($request->hasFile('foto') && $request->foto->isValid()) {
+            $path = $request->file('foto')->store('img_portefolios');
+            $data['imagem'] = $path;
+        }
+
+        if(Automovel::create($data)){
+            return back()->with(['success'=>"Feito com sucesso"]);
+        }
     }
 
     /**
@@ -76,8 +101,8 @@ class AutomovelController extends Controller
         $data = [
             'title' => "Automoveis",
             'menu' => "Automoveis",
-            'submenu' =>"Editar",
-            'type' =>"automovel",
+            'submenu' => "Editar",
+            'type' => "automovel",
         ];
 
         return view('automoveis.edit', $data);
