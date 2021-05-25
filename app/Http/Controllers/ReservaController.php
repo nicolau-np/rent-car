@@ -33,11 +33,15 @@ class ReservaController extends Controller
      */
     public function create()
     {
-        $data = [
 
+        $data = [
+            'title' => "Reservar",
+            'menu' => "Reservar",
+            'submenu' => "Novo",
+            'type' => "reservas",
         ];
 
-        create
+        return view('reserva.create', $data);
     }
 
     /**
