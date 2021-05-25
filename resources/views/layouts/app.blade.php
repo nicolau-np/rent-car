@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    @if ($type!="login" || $type!="register")
+    @if (($type!="login") && ($type!="register"))
 
   <div id="app">
     <div class="main-wrapper">
@@ -91,7 +91,7 @@
             </div></a>
             <div class="dropdown-menu dropdown-menu-right">
 
-              <a href="#" class="dropdown-item has-icon">
+              <a href="{{route('logout')}}" class="dropdown-item has-icon">
                 <i class="ion ion-log-out"></i> Logout
               </a>
             </div>
