@@ -13,7 +13,14 @@ class AutomovelController extends Controller
      */
     public function index()
     {
-        //
+        $data = [
+            'title' => "Automoveis",
+            'menu' => "Automoveis",
+            'submenu' =>"Listar",
+            'type' =>"automovel",
+        ];
+
+        return view('user.login', $data);
     }
 
     /**
