@@ -71,7 +71,7 @@ class AutomovelController extends Controller
 
         if ($request->hasFile('foto') && $request->foto->isValid()) {
             $path = $request->file('foto')->store('img_portefolios');
-            $data['imagem'] = $path;
+            $data['foto'] = $path;
         }
 
         if(Automovel::create($data)){
@@ -98,11 +98,13 @@ class AutomovelController extends Controller
      */
     public function edit($id)
     {
+        $automovel = Automovel::find($id);
         $data = [
             'title' => "Automoveis",
             'menu' => "Automoveis",
             'submenu' => "Editar",
             'type' => "automovel",
+            'getAutomovel'=>$automovel,
         ];
 
         return view('automoveis.edit', $data);
