@@ -20,7 +20,7 @@ class AutomovelController extends Controller
             'type' =>"automovel",
         ];
 
-        return view('user.login', $data);
+        return view('automoveis.list', $data);
     }
 
     /**
@@ -30,7 +30,14 @@ class AutomovelController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'title' => "Automoveis",
+            'menu' => "Automoveis",
+            'submenu' =>"Novo",
+            'type' =>"automovel",
+        ];
+
+        return view('automoveis.create', $data);
     }
 
     /**
@@ -63,7 +70,14 @@ class AutomovelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = [
+            'title' => "Automoveis",
+            'menu' => "Automoveis",
+            'submenu' =>"Editar",
+            'type' =>"automovel",
+        ];
+
+        return view('automoveis.edit', $data);
     }
 
     /**
