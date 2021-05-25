@@ -52,6 +52,16 @@
                   </div>
               </div>
 
+              <div class="row">
+                  <div class="form-group col-12">
+                    <label for="local_receber">Local Onde Pretende receber ou pegar a Viatura</label>
+                    <input id="local_receber" type="text" class="form-control" name="local_receber">
+                    @if($errors->has('local_receber'))
+                    <span class="text-danger">{{$errors->first('local_receber')}}</span>
+                   @endif
+
+                  </div>
+              </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block">
                   Salvar

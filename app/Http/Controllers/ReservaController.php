@@ -118,14 +118,21 @@ class ReservaController extends Controller
         $preco_total = $request->tempo * $automovel->preco;
         $data = [
             'id_cliente'=>$cliente->id,
-            'id_automovel'=>$id,
+            'id_automovel'=>$automovel->id,
             'data_requisicao'=>$request->data,
             'hora_requisicao'=>$request->hora,
             'tempo'=>$request->tempo,
             'preco_total'=>$preco_total,
-            'local_receber'=>$request->local,
+            'local_receber'=>$request->local_receber,
             'estado'=>"on",
         ];
+
+        if(Reserva::create($data)){
+            if(Automovel::find($automovel->id)->update(['estado'=>'off'])){
+                return back()->with(['success'=>"Feito com sucesso"]);
+            }
+
+        }
     }
 
     /**
