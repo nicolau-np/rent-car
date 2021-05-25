@@ -17,7 +17,7 @@ class CreateUsuariosTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('id_pessoa')->unsigned()->index();
             $table->string('email');
-            $table->text('palavra_passe');
+            $table->text('password');
             $table->string('acesso');
             $table->string('estado');
             $table->timestamps();
