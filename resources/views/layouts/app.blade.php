@@ -41,35 +41,35 @@
               </div>
               <div class="dropdown-list-content">
                 <a href="#" class="dropdown-item dropdown-item-unread">
-                  <img alt="image" src="../dist/img/avatar/avatar-1.jpeg" class="rounded-circle dropdown-item-img">
+                  <img alt="image" src="{{asset('assets/img/avatar/avatar-1.jpeg')}}" class="rounded-circle dropdown-item-img">
                   <div class="dropdown-item-desc">
                     <b>Kusnaedi</b> has moved task <b>Fix bug header</b> to <b>Done</b>
                     <div class="time">10 Hours Ago</div>
                   </div>
                 </a>
                 <a href="#" class="dropdown-item dropdown-item-unread">
-                  <img alt="image" src="../dist/img/avatar/avatar-2.jpeg" class="rounded-circle dropdown-item-img">
+                  <img alt="image" src="{{asset('assets/img/avatar/avatar-2.jpeg')}}" class="rounded-circle dropdown-item-img">
                   <div class="dropdown-item-desc">
                     <b>Ujang Maman</b> has moved task <b>Fix bug footer</b> to <b>Progress</b>
                     <div class="time">12 Hours Ago</div>
                   </div>
                 </a>
                 <a href="#" class="dropdown-item">
-                  <img alt="image" src="../dist/img/avatar/avatar-3.jpeg" class="rounded-circle dropdown-item-img">
+                  <img alt="image" src="{{asset('assets/img/avatar/avatar-3.jpeg')}}" class="rounded-circle dropdown-item-img">
                   <div class="dropdown-item-desc">
                     <b>Agung Ardiansyah</b> has moved task <b>Fix bug sidebar</b> to <b>Done</b>
                     <div class="time">12 Hours Ago</div>
                   </div>
                 </a>
                 <a href="#" class="dropdown-item">
-                  <img alt="image" src="../dist/img/avatar/avatar-4.jpeg" class="rounded-circle dropdown-item-img">
+                  <img alt="image" src="{{asset('assets/img/avatar/avatar-4.jpeg')}}" class="rounded-circle dropdown-item-img">
                   <div class="dropdown-item-desc">
                     <b>Ardian Rahardiansyah</b> has moved task <b>Fix bug navbar</b> to <b>Done</b>
                     <div class="time">16 Hours Ago</div>
                   </div>
                 </a>
                 <a href="#" class="dropdown-item">
-                  <img alt="image" src="../dist/img/avatar/avatar-5.jpeg" class="rounded-circle dropdown-item-img">
+                  <img alt="image" src="{{asset('assets/img/avatar/avatar-5.jpeg')}}" class="rounded-circle dropdown-item-img">
                   <div class="dropdown-item-desc">
                     <b>Alfa Zulkarnain</b> has moved task <b>Add logo</b> to <b>Done</b>
                     <div class="time">Yesterday</div>
@@ -99,7 +99,7 @@
           </div>
           <div class="sidebar-user">
             <div class="sidebar-user-picture">
-              <img alt="image" src="../dist/img/avatar/avatar-1.jpeg">
+              <img alt="image" src="{{asset('assets/img/avatar/avatar-1.jpeg')}}">
             </div>
             <div class="sidebar-user-details">
               <div class="user-name">Ujang Maman</div>
@@ -301,7 +301,7 @@
                 <div class="card-body">
                   <ul class="list-unstyled list-unstyled-border">
                     <li class="media">
-                      <img class="mr-3 rounded-circle" width="50" src="../dist/img/avatar/avatar-1.jpeg" alt="avatar">
+                      <img class="mr-3 rounded-circle" width="50" src="{{asset('assets/img/avatar/avatar-1.jpeg')}}" alt="avatar">
                       <div class="media-body">
                         <div class="float-right"><small>10m</small></div>
                         <div class="media-title">Farhan A Mujib</div>
@@ -309,7 +309,7 @@
                       </div>
                     </li>
                     <li class="media">
-                      <img class="mr-3 rounded-circle" width="50" src="../dist/img/avatar/avatar-2.jpeg" alt="avatar">
+                      <img class="mr-3 rounded-circle" width="50" src="{{asset('assets/img/avatar/avatar-2.jpeg')}}" alt="avatar">
                       <div class="media-body">
                         <div class="float-right"><small>10m</small></div>
                         <div class="media-title">Ujang Maman</div>
@@ -317,7 +317,7 @@
                       </div>
                     </li>
                     <li class="media">
-                      <img class="mr-3 rounded-circle" width="50" src="../dist/img/avatar/avatar-3.jpeg" alt="avatar">
+                      <img class="mr-3 rounded-circle" width="50" src="{{asset('assets/img/avatar/avatar-3.jpeg')}}" alt="avatar">
                       <div class="media-body">
                         <div class="float-right"><small>10m</small></div>
                         <div class="media-title">Rizal Fakhri</div>
@@ -325,7 +325,7 @@
                       </div>
                     </li>
                     <li class="media">
-                      <img class="mr-3 rounded-circle" width="50" src="../dist/img/avatar/avatar-4.jpeg" alt="avatar">
+                      <img class="mr-3 rounded-circle" width="50" src="{{asset('assets/img/avatar/avatar-4.jpeg')}}" alt="avatar">
                       <div class="media-body">
                         <div class="float-right"><small>10m</small></div>
                         <div class="media-title">Alfa Zulkarnain</div>
@@ -397,7 +397,7 @@
                             </div>
                           </td>
                           <td>
-                            <a href="#"><img src="../dist/img/avatar/avatar-1.jpeg" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                            <a href="#"><img src="{{asset('assets/img/avatar/avatar-1.jpeg')}}" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
                           </td>
                           <td>
                             <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="ion ion-edit"></i></a>
@@ -414,7 +414,7 @@
                             </div>
                           </td>
                           <td>
-                            <a href="#"><img src="../dist/img/avatar/avatar-1.jpeg" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                            <a href="#"><img src="{{asset('assets/img/avatar/avatar-1.jpeg')}}" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
                           </td>
                           <td>
                             <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="ion ion-edit"></i></a>
@@ -431,7 +431,7 @@
                             </div>
                           </td>
                           <td>
-                            <a href="#"><img src="../dist/img/avatar/avatar-1.jpeg" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                            <a href="#"><img src="{{asset('assets/img/avatar/avatar-1.jpeg')}}" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
                           </td>
                           <td>
                             <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="ion ion-edit"></i></a>
@@ -448,7 +448,7 @@
                             </div>
                           </td>
                           <td>
-                            <a href="#"><img src="../dist/img/avatar/avatar-1.jpeg" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                            <a href="#"><img src="{{asset('assets/img/avatar/avatar-1.jpeg')}}" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
                           </td>
                           <td>
                             <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="ion ion-edit"></i></a>
@@ -473,16 +473,16 @@
     </div>
   </div>
 
-  <script src="../dist/modules/jquery.min.js"></script>
-  <script src="../dist/modules/popper.js"></script>
-  <script src="../dist/modules/tooltip.js"></script>
-  <script src="../dist/modules/bootstrap/js/bootstrap.min.js"></script>
-  <script src="../dist/modules/nicescroll/jquery.nicescroll.min.js"></script>
-  <script src="../dist/modules/scroll-up-bar/dist/scroll-up-bar.min.js"></script>
-  <script src="../dist/js/sa-functions.js"></script>
+  <script src="{{asset('assets/modules/jquery.min.js')}}"></script>
+  <script src="{{asset('assets/modules/popper.js')}}"></script>
+  <script src="{{asset('assets/modules/tooltip.js')}}"></script>
+  <script src="{{asset('assets/modules/bootstrap/js/bootstrap.min.js')}}"></script>
+  <script src="{{asset('assets/modules/nicescroll/jquery.nicescroll.min.js')}}"></script>
+  <script src="{{asset('assets/modules/scroll-up-bar/dist/scroll-up-bar.min.js')}}"></script>
+  <script src="{{asset('assets/js/sa-functions.js')}}"></script>
 
-  <script src="../dist/modules/chart.min.js"></script>
-  <script src="../dist/modules/summernote/summernote-lite.js"></script>
+  <script src="{{asset('assets/modules/chart.min.js')}}"></script>
+  <script src="{{asset('assets/modules/summernote/summernote-lite.js')}}"></script>
 
   <script>
   var ctx = document.getElementById("myChart").getContext('2d');
@@ -521,8 +521,8 @@
     }
   });
   </script>
-  <script src="../dist/js/scripts.js"></script>
-  <script src="../dist/js/custom.js"></script>
-  <script src="../dist/js/demo.js"></script>
+  <script src="{{asset('assets/js/scripts.js')}}"></script>
+  <script src="{{asset('assets/js/custom.js')}}"></script>
+  <script src="{{asset('assets/js/demo.js')}}"></script>
 </body>
 </html>
