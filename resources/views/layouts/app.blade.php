@@ -84,7 +84,7 @@
             <i class="ion ion-android-person d-lg-none"></i>
             <div class="d-sm-none d-lg-inline-block">
                 @if (Auth::check())
-                    {{Auth::user()->pessoa->nome}}
+                    {{Auth::user()->pessoa->nome}} {{Auth::user()->pessoa->sobrenome}}
                 @else
                     usuario
                 @endif
@@ -110,7 +110,7 @@
             <div class="sidebar-user-details">
               <div class="user-name">
                   @if (Auth::check())
-                        {{Auth::user()->pessoa->nome}}
+                        {{Auth::user()->pessoa->nome}} {{Auth::user()->pessoa->sobrenome}}
                   @else
                   usuario
                   @endif
@@ -132,7 +132,7 @@
             <li class="menu-header">Essenciais</li>
 
             <li>
-              <a href="/automovel"><i class="ion ion-clipboard"></i><span>Automóveis</span></a>
+              <a href="/automovel"><i class="ion-model-s"></i><span>Automóveis</span></a>
             </li>
             <li>
               <a href="/reserva"><i class="ion ion-stats-bars"></i><span>Reservas</span></a>
