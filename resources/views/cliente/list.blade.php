@@ -23,16 +23,16 @@
                 <table class="table table-striped">
                   <tbody><tr>
                     <th>IMG</th>
+                    <th>Nome Completo</th>
                     <th>Telefone</th>
                     <th>Bairro</th>
-                    <th>Estado</th>
                   </tr>
                   @foreach ($getClientes as $clientes)
                   <tr>
                   <td><img src="{{asset($clientes->pessoa->foto)}}" style="width:53px; height:53px;" alt="" srcset=""/></td>
+                  <td>{{$clientes->pessoa->nome}} {{$clientes->pessoa->sobrenome}}</td>
                   <td>{{$clientes->telefone}}</td>
                     <td>{{$clientes->bairro}}</td>
-                    <td>{{$automoveis->estado}}</td>
 
                   </tr>
 

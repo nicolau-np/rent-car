@@ -71,7 +71,9 @@
                   </div>
                 </a>
                 <a href="#" class="dropdown-item">
-                  <img alt="image" src="{{asset('assets/img/avatar/avatar-5.jpeg')}}" class="rounded-circle dropdown-item-img">
+                  <img alt="image" src="
+                  {{asset('assets/img/avatar/avatar-5.jpeg')}}
+                  " class="rounded-circle dropdown-item-img">
                   <div class="dropdown-item-desc">
                     <b>Alfa Zulkarnain</b> has moved task <b>Add logo</b> to <b>Done</b>
                     <div class="time">Yesterday</div>
@@ -101,11 +103,17 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-          <a href="/">{{$title}}</a>
+          <a href="/">System Rent-Car</a>
           </div>
           <div class="sidebar-user">
             <div class="sidebar-user-picture">
-              <img alt="image" src="{{asset('assets/img/avatar/avatar-1.jpeg')}}">
+              <img alt="image" src="
+              @if (Auth::check())
+                    @if (Auth::user()->pessoa->foto!="")
+                    {{asset(Auth::user()->pessoa->foto)}}
+                    @endif
+                  @endif
+              ">
             </div>
             <div class="sidebar-user-details">
               <div class="user-name">
