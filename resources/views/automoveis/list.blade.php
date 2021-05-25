@@ -26,16 +26,19 @@
                     <th>IMG</th>
                     <th>Marca</th>
                     <th>Modelo</th>
+                    <th>Matricula</th>
+                    <th>Estado</th>
                     <th>Operação</th>
                   </tr>
                   @foreach ($getAutomoveis as $automoveis)
                   <tr>
-                    <td>1</td>
-                    <td>Irwansyah Saputra</td>
-                    <td>2017-01-09</td>
-                    <td><div class="badge badge-success">Active</div></td>
+                  <td><img src="{{asset($automoveis->foto)}}" style="width:53px; height:53px;" alt="" srcset=""/></td>
+                  <td>{{$automoveis->marca}}</td>
+                    <td>{{$automoveis->modelo}}</td>
+                    <td>{{$automoveis->matricula}}</td>
+                    <td>{{$automoveis->estado}}</td>
                     <td>
-                        <a href="#" class="btn btn-action btn-secondary">Editar</a>
+                        <a href="/automovel/edit/{{$automoveis->id}}" class="btn btn-action btn-secondary">Editar</a>
                     </td>
                   </tr>
 
